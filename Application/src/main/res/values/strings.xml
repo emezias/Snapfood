@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SnapApp started with NavDrawer sample
+  -->
+<resources>
+    <string-array name="menu_list">
+        <item>Scan Card</item>
+        <item>Check Scan</item>
+        <item>Balances</item>
+        <item>Market Map</item>
+    </string-array>
+    <string name="app_name">SnapApp</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+
+    <string name="intro_message">Begin with Benefits</string>
+    <string name="number_label">EBT Card Number</string>
+    <string name="name_label">Name on Card</string>
+    <string name="date_label">Begin with Benefits</string>
+    <string name="pin_label">Begin with Benefits</string>
+    <string name="scan">Scan</string>
+
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Ocr dependencies cannot be downloaded due to low device storage</string>
+    <string name="title_activity_main">Ocr Detector Sample</string>
+    <string name="ocr_header">Click &quot;Detect Text&quot; to detect text</string>
+    <string name="read_text">Detect Text</string>
+    <string name="auto_focus">Auto Focus</string>
+    <string name="use_flash">Use Flash</string>
+    <string name="ocr_success">Text read successfully</string>
+    <string name="ocr_failure">No text captured</string>
+    <string name="ocr_error">"Error reading text: %1$s"</string>
+</resources>

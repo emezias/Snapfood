@@ -128,7 +128,7 @@
                 android:inputType="numberPassword" />
 
             <android.support.v7.widget.AppCompatImageButton
-                android:id="@+id/savButton"
+                android:id="@+id/saveButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"

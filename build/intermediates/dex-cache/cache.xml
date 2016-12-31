@@ -12,6 +12,42 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_044c07171bef335a8aaf3981f193e075f9112a26.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_8f2b01a26b8a403fefe24ca3dd945f8d3ca6f012.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="670df81539ab71918d49b186598b7eff08ef6563">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-vision-9.4.0_53d145ed266a4bdd018c0c49afc2dd3f375ba979.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.4.0_30501218aa5269347568fb21019cb971dff826dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -21,12 +57,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="61fd2644ca586288d0e733377d12b5f6da18c4ca">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_4912ebf95f788b79080ab47329d55589e5ae4d8f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Applications/AndroidSDK/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
         <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_b152edde741cebdc4c6054b60bb49d3d59291082.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0_62edc31d76348f0103bfccc2fc6b6be756c8aeaa.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,15 +102,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
-        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0_62edc31d76348f0103bfccc2fc6b6be756c8aeaa.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -66,30 +111,30 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.4.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_044c07171bef335a8aaf3981f193e075f9112a26.jar" />
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.4.0_987240fa7ab94b1ac3d0c71c244bdbafd3b0e673.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/support-v13/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.4.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="61fd2644ca586288d0e733377d12b5f6da18c4ca">
-        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_4912ebf95f788b79080ab47329d55589e5ae4d8f.jar" />
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.4.0_0a5b9e7039cd434648b691c35e302bc0dbc829e1.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jar="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/exploded-aar/com.android.support/design/22.2.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
-        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_8f2b01a26b8a403fefe24ca3dd945f8d3ca6f012.jar" />
+        sha1="1821601ddbec5ff125653097812823388700af74">
+        <dex dex="/Users/emezias/Projects/Blockchain/SnapApp/Application/build/intermediates/pre-dexed/debug/com.android.support-design-22.2.1_196e41143f098729875ff34821f944fefdd81eb2.jar" />
     </item>
 
 </items>

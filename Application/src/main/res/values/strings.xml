@@ -24,6 +24,7 @@
     <string name="pin_label">Card Password</string>
     <string name="pin_hint">Secret Pin</string>
     <string name="scan">Scan</string>
+    <string name="save">Save</string>
 
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
 

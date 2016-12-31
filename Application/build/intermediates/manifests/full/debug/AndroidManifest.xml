@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--  Based on the Navigaton Drawer sample -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.snapfood.navigationdrawer"
+    package="com.snapfood.snapapp"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -10,7 +10,6 @@
         android:targetSdkVersion="25" />
 
     <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
-
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -19,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.snapfood.snapapp.MainActivity"
+            android:name="com.snapfood.snapapp.OnboardActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +28,10 @@
         </activity>
         <activity
             android:name="com.snapfood.snapapp.MenuActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.snapfood.snapapp.ocr.OcrCaptureActivity"
             android:label="@string/app_name" >
         </activity>
         <activity

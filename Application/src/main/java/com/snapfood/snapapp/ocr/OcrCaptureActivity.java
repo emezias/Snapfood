@@ -28,9 +28,10 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.snapfood.snapapp.R;
+import com.snapfood.snapapp.ocr.camera.CameraSource;
 import com.snapfood.snapapp.ocr.camera.CameraSourcePreview;
 import com.snapfood.snapapp.ocr.camera.GraphicOverlay;
-import com.snapfood.snapapp.ocr.camera.CameraSource;
 
 import java.io.IOException;
 

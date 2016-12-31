@@ -7,16 +7,16 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
-    <com.google.android.gms.samples.vision.ocrreader.ui.camera.CameraSourcePreview
+    <com.snapfood.snapapp.ocr.camera.CameraSourcePreview
         android:id="@+id/preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.gms.samples.vision.ocrreader.ui.camera.GraphicOverlay
+        <com.snapfood.snapapp.ocr.camera.GraphicOverlay
             android:id="@+id/graphicOverlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </com.google.android.gms.samples.vision.ocrreader.ui.camera.CameraSourcePreview>
+    </com.snapfood.snapapp.ocr.camera.CameraSourcePreview>
 
 </LinearLayout>

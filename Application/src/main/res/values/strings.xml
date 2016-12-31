@@ -4,8 +4,8 @@
   -->
 <resources>
     <string-array name="menu_list">
-        <item>Scan Card</item>
-        <item>Check Scan</item>
+        <item>Set Card Data</item>
+        <item>Scan Check</item>
         <item>Balances</item>
         <item>Market Map</item>
     </string-array>
@@ -16,9 +16,13 @@
 
     <string name="intro_message">Begin with Benefits</string>
     <string name="number_label">EBT Card Number</string>
-    <string name="name_label">Name on Card</string>
-    <string name="date_label">Begin with Benefits</string>
-    <string name="pin_label">Begin with Benefits</string>
+    <string name="number_hint">numbers only, no spaces</string>
+    <string name="name_label">Card Owner</string>
+    <string name="name_hint">name on the card</string>
+    <string name="date_label">Birthdate</string>
+    <string name="date_hint">dd/mm/yyyy</string>
+    <string name="pin_label">Card Password</string>
+    <string name="pin_hint">Secret Pin</string>
     <string name="scan">Scan</string>
 
     <string name="app_not_available">Sorry, there\'s no web browser available</string>

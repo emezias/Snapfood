@@ -1,5 +1,3 @@
-
-
 package com.snapfood.snapapp;
 
 import android.app.Fragment;
@@ -39,7 +37,9 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
     public static final String PIN = "pin";
 
     TextView mStatusMessage;
-    EditText mCardNumber;
+    EditText mCardNumber, mName, mDate, mPin;
+    SharedPreferences mPreferences;
+
     //ripped from MenuActivity
     private DrawerLayout mDrawerLayout;
     private RecyclerView mDrawerList;
@@ -53,6 +53,10 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
         setContentView(R.layout.activity_onboard);
         mStatusMessage = (TextView)findViewById(R.id.status);
         mCardNumber = (EditText) findViewById(R.id.card);
+        mName = (EditText) findViewById(R.id.name);
+        mDate = (EditText) findViewById(R.id.date);
+        mPin = (EditText) findViewById(R.id.pin);
+
         //ripped from MenuActivity
         mTitle = mDrawerTitle = getString(R.string.app_name);
         menuTitle = getResources().getStringArray(R.array.menu_list);
@@ -86,16 +90,28 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        if (getSupportActionBar() != null) getSupportActionBar().setDisplayShowHomeEnabled(true);
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).contains(CARD_NUMBER)) {
-            startActivity(new Intent(this, MenuActivity.class));
-            finish();
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        if (mPreferences.contains(CARD_NUMBER)) {
+            mCardNumber.setText(mPreferences.getString(CARD_NUMBER, ""));
+        }
+        if (mPreferences.contains(NAME)) {
+            mName.setText(mPreferences.getString(NAME, ""));
+        }
+        if (mPreferences.contains(B_DATE)) {
+            mDate.setText(mPreferences.getString(B_DATE, ""));
+        }
+        if (mPreferences.contains(PIN)) {
+            mPin.setText(mPreferences.getString(PIN, ""));
         }
     }
 
@@ -152,6 +168,15 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
     }
 
     @Override
+    public void onBackPressed() {
+        if (mDrawerLayout.isDrawerOpen(mDrawerList)) {
+            mDrawerLayout.closeDrawer(mDrawerList);
+            return;
+        }
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == SCAN_ACTIVITY) {
@@ -185,7 +210,7 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
         //set in xml to move to next
         startActivity(new Intent(this, MenuActivity.class));
         //TODO error check values in fields
-        final SharedPreferences.Editor ed = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
+        final SharedPreferences.Editor ed = mPreferences.edit();
         String tmp = mCardNumber.getText().toString();
         if (!TextUtils.isEmpty(tmp)) {
             ed.putString(CARD_NUMBER, tmp);

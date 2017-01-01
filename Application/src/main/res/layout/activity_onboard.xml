@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_medium"
                 android:layout_marginBottom="@dimen/margin_small"
                 android:text="@string/intro_message" />
 
@@ -44,27 +44,27 @@
                 android:onClick="scanCard" />
 
             <View android:layout_width="match_parent"
+                android:background="@color/ghost_teal"
                 android:layout_height="1dp"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/horizontal_page_margin"
+                android:layout_marginRight="@dimen/horizontal_page_margin"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_small"/>
 
             <TextView style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
                 android:text="@string/number_label" />
 
             <EditText android:id="@+id/card"
                 style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/horizontal_page_margin"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginRight="@dimen/horizontal_page_margin"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_small"
                 android:hint="@string/number_hint" />
@@ -72,18 +72,17 @@
             <TextView style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
                 android:text="@string/name_label" />
 
             <EditText android:id="@+id/name"
                 style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/horizontal_page_margin"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginRight="@dimen/horizontal_page_margin"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_small"
                 android:hint="@string/name_hint" />
@@ -91,18 +90,17 @@
             <TextView style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
                 android:text="@string/date_label" />
 
             <EditText android:id="@+id/date"
                 style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/horizontal_page_margin"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginRight="@dimen/horizontal_page_margin"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_small"
                 android:hint="@string/date_hint" />
@@ -110,34 +108,21 @@
             <TextView style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_small"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
                 android:text="@string/pin_label" />
 
             <EditText android:id="@+id/pin"
                 style="@style/Widget.SampleMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/horizontal_page_margin"
-                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginRight="@dimen/horizontal_page_margin"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_small"
                 android:hint="@string/pin_hint"
                 android:inputType="numberPassword" />
-
-            <android.support.v7.widget.AppCompatImageButton
-                android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:layout_marginBottom="@dimen/margin_small"
-                android:padding="16dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/btn_bg"
-                android:src="@android:drawable/ic_menu_save"
-                android:onClick="saveData" />
         </LinearLayout>
     </ScrollView>
 

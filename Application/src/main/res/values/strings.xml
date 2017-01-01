@@ -14,7 +14,7 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_websearch">Web search</string>
 
-    <string name="intro_message">Begin with Benefits</string>
+    <string name="intro_message">Scan your Card</string>
     <string name="number_label">EBT Card Number</string>
     <string name="number_hint">numbers only, no spaces</string>
     <string name="name_label">Card Owner</string>

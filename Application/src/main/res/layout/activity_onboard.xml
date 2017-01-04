@@ -44,7 +44,7 @@
                 android:onClick="scanCard" />
 
             <View android:layout_width="match_parent"
-                android:background="@color/ghost_teal"
+                android:background="@color/ghost_orange"
                 android:layout_height="1dp"
                 android:layout_marginLeft="@dimen/horizontal_page_margin"
                 android:layout_marginRight="@dimen/horizontal_page_margin"

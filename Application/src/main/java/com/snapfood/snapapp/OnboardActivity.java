@@ -1,13 +1,13 @@
 package com.snapfood.snapapp;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
+import com.snapfood.snapapp.fragment.ConfirmID;
 import com.snapfood.snapapp.ocr.OcrCaptureActivity;
 
 /**
@@ -206,8 +207,7 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
         startActivityForResult(intent, SCAN_ACTIVITY);
     }
 
-    public void saveData(View btn) {
-        //set in xml to move to next
+    public void saveCardData( ) {
         startActivity(new Intent(this, MenuActivity.class));
         //TODO error check values in fields
         final SharedPreferences.Editor ed = mPreferences.edit();
@@ -234,13 +234,18 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
         finish();
     }
 
+    public void saveData(View btn) {
+        //set in xml to move to next
+        new ConfirmID().show(getSupportFragmentManager(), ConfirmID.TAG);
+    }
+
     @Override
     public void onClick(View view, int position) {
         //TODO
         // update the main content by replacing fragments
         Fragment fragment = MenuActivity.PlanetFragment.newInstance(position);
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_frame, fragment);
         ft.commit();

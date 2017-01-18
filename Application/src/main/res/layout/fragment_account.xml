@@ -1,0 +1,83 @@
+<!--
+  Account screen, where username and password get set
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/horizontal_page_margin"
+    android:layout_marginRight="@dimen/horizontal_page_margin"
+    android:layout_marginTop="@dimen/vertical_page_margin"
+    android:layout_marginBottom="@dimen/vertical_page_margin"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/acct_state_tv"
+        style="@style/Widget.SampleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/acct_state_label" />
+
+    <android.support.v7.widget.AppCompatAutoCompleteTextView android:id="@+id/acct_state_picker"
+        style="@style/Widget.SampleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/horizontal_page_margin"
+        android:layout_marginRight="@dimen/horizontal_page_margin"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:layout_below="@id/acct_state_tv"  />
+
+    <TextView android:id="@+id/acct_user_tv"
+        style="@style/Widget.SampleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_below="@id/acct_state_picker"
+        android:text="@string/acct_user_label" />
+
+    <EditText android:id="@+id/acct_user"
+        style="@style/Widget.SampleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/horizontal_page_margin"
+        android:layout_marginRight="@dimen/horizontal_page_margin"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_below="@id/acct_user_tv"/>
+
+    <TextView android:id="@+id/acct_pwd_tv"
+        style="@style/Widget.SampleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_below="@id/acct_user"
+        android:text="@string/acct_pwd_label" />
+
+    <EditText android:id="@+id/acct_pwd"
+        style="@style/Widget.SampleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/horizontal_page_margin"
+        android:layout_marginRight="@dimen/horizontal_page_margin"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_below="@id/acct_pwd_tv"/>
+
+    <Button android:id="@+id/acct_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/horizontal_page_margin"
+        android:layout_marginBottom="@dimen/vertical_page_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Login"
+        android:drawableRight="@android:drawable/ic_menu_send" />
+
+</RelativeLayout>

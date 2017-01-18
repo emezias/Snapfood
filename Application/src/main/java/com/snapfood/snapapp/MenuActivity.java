@@ -1,10 +1,10 @@
 package com.snapfood.snapapp;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,34 +18,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.snapfood.snapapp.fragment.AccountDetails;
+
 import java.util.Locale;
 
 /**
- * This example illustrates a common usage of the DrawerLayout widget
- * in the Android support library.
- * <p/>
- * <p>When a navigation (left) drawer is present, the host activity should detect presses of
- * the action bar's Up affordance as a signal to open and close the navigation drawer. The
- * ActionBarDrawerToggle facilitates this behavior.
- * Items within the drawer should fall into one of two categories:</p>
- * <p/>
- * <ul>
- * <li><strong>View switches</strong>. A view switch follows the same basic policies as
- * list or tab navigation in that a view switch does not create navigation history.
- * This pattern should only be used at the root activity of a task, leaving some form
- * of Up navigation active for activities further down the navigation hierarchy.</li>
- * <li><strong>Selective Up</strong>. The drawer allows the user to choose an alternate
- * parent for Up navigation. This allows a user to jump across an app's navigation
- * hierarchy at will. The application should treat this as it treats Up navigation from
- * a different task, replacing the current task stack using TaskStackBuilder or similar.
- * This is the only form of navigation drawer that should be used outside of the root
- * activity of a task.</li>
- * </ul>
- * <p/>
- * <p>Right side drawers should be used for actions, not navigation. This follows the pattern
- * established by the Action Bar that navigation should be to the left and actions to the right.
- * An action should be an operation performed on the current contents of the window,
- * for example enabling or disabling a data overlay on top of the current content.</p>
+ * This activity hosts the fragments that are available after onboarding is completed
  */
 public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnItemClickListener {
     public static final String TAG = "MenuActivity";
@@ -97,6 +75,14 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
         mDrawerLayout.setDrawerListener(mDrawerToggle);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        final FragmentManager mgr = getSupportFragmentManager();
+        final FragmentTransaction tx = mgr.beginTransaction();
+        tx.replace(R.id.menu_content_frame, new AccountDetails(), AccountDetails.TAG).commit();
+        //mgr.executePendingTransactions();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -142,7 +128,7 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
         // update the main content by replacing fragments
         Fragment fragment = PlanetFragment.newInstance(position);
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.content_frame, fragment);
         ft.commit();

@@ -17,8 +17,14 @@
         <item name="android:paddingRight">@dimen/horizontal_page_margin</item>
     </style>
 
-<style name="Widget.SampleMessage">
+    <style name="Widget.SampleMessage">
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+    <style name="Widget.DialogTitle">
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
         <item name="android:lineSpacingMultiplier">1.1</item>
         <item name="android:textColor">@color/black_54</item>
     </style>

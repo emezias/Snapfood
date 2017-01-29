@@ -14,16 +14,16 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.android.gms.common.api.CommonStatusCodes;
 import com.snapfood.snapapp.fragment.ConfirmID;
-import com.snapfood.snapapp.ocr.OcrCaptureActivity;
+
+import io.card.payment.CardIOActivity;
+import io.card.payment.CreditCard;
 
 /**
  * Install/Setup activity
@@ -101,6 +101,14 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
     @Override
     protected void onResume() {
         super.onResume();
+
+        if (CardIOActivity.canReadCardWithCamera()) {
+            mStatusMessage.setText(R.string.intro_message);
+            findViewById(R.id.scanButton).setEnabled(true);
+        } else {
+            mStatusMessage.setText(R.string.intro2_message);
+            findViewById(R.id.scanButton).setEnabled(false);
+        }
         mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         if (mPreferences.contains(CARD_NUMBER)) {
             mCardNumber.setText(mPreferences.getString(CARD_NUMBER, ""));
@@ -181,30 +189,49 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == SCAN_ACTIVITY) {
-            if (resultCode == CommonStatusCodes.SUCCESS) {
-                if (data != null) {
-                    String text = data.getStringExtra(OcrCaptureActivity.TextBlockObject);
-                    mStatusMessage.setText(R.string.ocr_success);
-                    mCardNumber.setText(text);
-                    Log.d(TAG, "Text read: " + text);
-                } else {
-                    mStatusMessage.setText(R.string.ocr_failure);
-                    Log.d(TAG, "No Text captured, intent data is null");
+            //handle with and without data returned from the scan
+            if (data != null && data.hasExtra(CardIOActivity.EXTRA_SCAN_RESULT)) {
+                CreditCard scanResult = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
+                final SharedPreferences.Editor ed = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
+                // Never log a raw card number. Avoid displaying it, but if necessary use getFormattedCardNumber()
+                String resultStr = "Card Number: " + scanResult.getRedactedCardNumber() + "\n";
+                ed.putString(OnboardActivity.CARD_NUMBER, scanResult.getRedactedCardNumber());
+                /*if (scanResult.isExpiryValid()) {
+                    resultStr += "Expiration Date: " + scanResult.expiryMonth + "/" + scanResult.expiryYear + "\n";
+                }*/
+
+                if (scanResult.cardholderName != null) {
+                    resultStr += "Cardholder Name : " + scanResult.cardholderName + "\n";
+                    ed.putString(OnboardActivity.NAME, scanResult.cardholderName);
                 }
+                ed.apply();
+                mStatusMessage.setText(resultStr);
             } else {
-                mStatusMessage.setText(String.format(getString(R.string.ocr_error),
-                        CommonStatusCodes.getStatusCodeString(resultCode)));
+                mStatusMessage.setText(getString(R.string.cancel_scan));
             }
         }
     }
 
     public void scanCard(View btn) {
         //set in xml to launch OCR activity
-        Intent intent = new Intent(this, OcrCaptureActivity.class);
-        intent.putExtra(OcrCaptureActivity.AutoFocus, true);
-        intent.putExtra(OcrCaptureActivity.UseFlash, true);
-        //TODO add as options in to layout
-        startActivityForResult(intent, SCAN_ACTIVITY);
+        Intent scanIntent = new Intent(this, CardIOActivity.class);
+
+        // customize these values to suit your needs.
+        /*scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_EXPIRY, true); // default: false
+        scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, false); // default: false
+        scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, false); // default: false
+        scanIntent.putExtra(CardIOActivity.EXTRA_RESTRICT_POSTAL_CODE_TO_NUMERIC_ONLY, false); // default: false*/
+        scanIntent.putExtra(CardIOActivity.EXTRA_REQUIRE_CARDHOLDER_NAME, false); // default: false
+
+        // hides the manual entry button
+        // if set, developers should provide their own manual entry mechanism in the app
+        scanIntent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, false); // default: false
+
+        // matches the theme of your application
+        scanIntent.putExtra(CardIOActivity.EXTRA_KEEP_APPLICATION_THEME, false); // default: false
+
+        // MY_SCAN_REQUEST_CODE is arbitrary and is only used within this activity.
+        startActivityForResult(scanIntent, SCAN_ACTIVITY);
     }
 
     public void saveCardData( ) {

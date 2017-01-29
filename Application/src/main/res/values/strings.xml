@@ -10,11 +10,13 @@
         <item>Market Map</item>
     </string-array>
     <string name="app_name">SnapApp</string>
+    <string name="confirm_key">ec0c1d6e-c343-48bf-8564-b8bb35eb5600</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_websearch">Web search</string>
 
     <string name="intro_message">Scan your Card</string>
+    <string name="intro2_message">Enter your Card Information</string>
     <string name="number_label">EBT Card Number</string>
     <string name="number_hint">numbers only, no spaces</string>
     <string name="name_label">Card Owner</string>
@@ -25,7 +27,7 @@
     <string name="pin_hint">Secret Pin</string>
     <string name="scan">Scan</string>
     <string name="save">Save</string>
-
+    <string name="cancel_scan">Cancel Scan</string>
     <string name="confirm">Confirm EBT Card Ownership\nScan Identification\n(Confirm.IO)</string>
 
     <string name="acct_title">Account Details</string>

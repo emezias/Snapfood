@@ -22,6 +22,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:24.0.0'
     compile 'com.google.android.gms:play-services-vision:9.4.0+'
     compile 'com.android.support:design:22.2.1'
+    compile 'io.card:android-sdk:5.4.2'
 }
 
 android {

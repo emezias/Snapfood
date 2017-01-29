@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Nav Drawer and Action bar layout
+  -->
+
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView style="@style/Widget.DialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:gravity="center"
+            android:text="@string/confirm" />
+
+        <Button android:id="@+id/confirm_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginRight="@dimen/horizontal_page_margin"
+            android:layout_marginBottom="@dimen/vertical_page_margin"
+            android:text="@android:string/ok" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/left_drawer"
+        android:scrollbars="vertical"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        android:choiceMode="singleChoice"
+        android:divider="@null"
+        app:layoutManager="LinearLayoutManager"
+        />
+</android.support.v4.widget.DrawerLayout>

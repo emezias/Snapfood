@@ -23,9 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.snapfood.snapapp.MenuActivity"
-            android:label="@string/app_name" >
-        </activity>
+            android:name="com.snapfood.snapapp.CheckIDActivity"
+            android:label="@string/app_name" />
         <!-- Confirm SDK - required -->
         <activity
             android:name="io.confirm.confirmsdk.ConfirmCameraActivity"

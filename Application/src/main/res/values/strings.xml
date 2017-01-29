@@ -5,7 +5,7 @@
 <resources>
     <string-array name="menu_list">
         <item>Set Card Data</item>
-        <item>Scan Check</item>
+        <item>Check ID</item>
         <item>Balances</item>
         <item>Market Map</item>
     </string-array>
@@ -28,7 +28,7 @@
     <string name="scan">Scan</string>
     <string name="save">Save</string>
     <string name="cancel_scan">Cancel Scan</string>
-    <string name="confirm">Confirm EBT Card Ownership\nScan Identification\n(Confirm.IO)</string>
+    <string name="confirm">Confirm EBT Card Ownership\nCheck ID\n(Confirm.IO)</string>
 
     <string name="acct_title">Account Details</string>
     <string name="acct_state_label">State issuing card:</string>

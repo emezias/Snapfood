@@ -1,7 +1,10 @@
 package com.snapfood.snapapp;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -19,21 +22,26 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.snapfood.snapapp.fragment.AccountDetails;
+import com.snapfood.snapapp.fragment.ConfirmID;
 
 import java.util.Locale;
 
 /**
  * This activity hosts the fragments that are available after onboarding is completed
+ * Begin with the Account Details
+ * Also host Confirm ID scan and Confirm ID result
  */
 public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnItemClickListener {
     public static final String TAG = "MenuActivity";
     private DrawerLayout mDrawerLayout;
     private RecyclerView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
+    private Fragment mFragment;
 
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mPlanetTitles;
+    private SharedPreferences mPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +88,13 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
         super.onResume();
         final FragmentManager mgr = getSupportFragmentManager();
         final FragmentTransaction tx = mgr.beginTransaction();
-        tx.replace(R.id.menu_content_frame, new AccountDetails(), AccountDetails.TAG).commit();
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        if (mPrefs.contains(ConfirmID.TAG)) {
+            tx.replace(R.id.menu_content_frame, new AccountDetails(), AccountDetails.TAG).commit();
+        } else {
+            tx.replace(R.id.menu_content_frame, new ConfirmID(), ConfirmID.TAG).commit();
+        }
+
         //mgr.executePendingTransactions();
     }
 
@@ -118,6 +132,12 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
         }
     }
 
+    void setFragment(Fragment fragment, String tag) {
+        mFragment = fragment;
+        getSupportFragmentManager().beginTransaction()
+            .replace(R.id.content_frame, fragment, tag).commit();
+    }
+
     /* The click listener for RecyclerView in the navigation drawer */
     @Override
     public void onClick(View view, int position) {
@@ -125,13 +145,28 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
     }
 
     private void selectItem(int position) {
-        // update the main content by replacing fragments
-        Fragment fragment = PlanetFragment.newInstance(position);
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.content_frame, fragment);
-        ft.commit();
+        // update the main content by replacing fragments, as needed
+        switch (position) {
+            case 0:
+                //set card data
+                startActivity(new Intent(this, OnboardActivity.class));
+                break;
+            case 1:
+                //check id
+                if (mFragment != null && mFragment.getTag().equals(TAG)) {
+                    //skip, fragment is loaded
+                } else {
+                    setFragment(new ConfirmID(), ConfirmID.TAG);
+                }
+                break;
+            case 2:
+                //balances
+                Toast.makeText(this, "To do", Toast.LENGTH_SHORT).show();
+                break;
+            case 3:
+                //shopping, map TODO
+                break;
+        }
 
         // update selected item title, then close the drawer
         setTitle(mPlanetTitles[position]);

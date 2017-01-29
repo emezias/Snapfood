@@ -20,8 +20,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.snapfood.snapapp.fragment.ConfirmID;
-
 import io.card.payment.CardIOActivity;
 import io.card.payment.CreditCard;
 
@@ -263,7 +261,8 @@ public class OnboardActivity extends AppCompatActivity implements MenuAdapter.On
 
     public void saveData(View btn) {
         //set in xml to move to next
-        new ConfirmID().show(getSupportFragmentManager(), ConfirmID.TAG);
+        //new ConfirmID().show(getSupportFragmentManager(), ConfirmID.TAG);
+        startActivity(new Intent(this, MenuActivity.class));
     }
 
     @Override

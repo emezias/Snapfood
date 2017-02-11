@@ -42,3 +42,4 @@ captures/
 *.jks
 Application/tests/src/com/example/
 Application/tests/src/com/snapfood/snapapp/
+Application/src/main/java/com/snapfood/.DS_Store

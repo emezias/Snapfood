@@ -2,7 +2,6 @@ package com.snapfood.snapapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
@@ -17,7 +16,7 @@ import io.card.payment.CreditCard;
 /**
  * Install/Setup activity
  */
-public class OnboardActivity extends MenuActivity implements MenuAdapter.OnItemClickListener{
+public class OnboardActivity extends MenuActivity {
     public static final String TAG = "OnboardActivity";
     public static final int SCAN_ACTIVITY = 9;
     //Preference constants
@@ -38,7 +37,6 @@ public class OnboardActivity extends MenuActivity implements MenuAdapter.OnItemC
         mName = (EditText) findViewById(R.id.name);
         mDate = (EditText) findViewById(R.id.date);
         mPin = (EditText) findViewById(R.id.pin);
-        setMenu();
     }
 
     @Override
@@ -65,25 +63,6 @@ public class OnboardActivity extends MenuActivity implements MenuAdapter.OnItemC
         if (mPreferences.contains(PIN)) {
             mPin.setText(mPreferences.getString(PIN, ""));
         }
-    }
-
-    /**
-     * When using the ActionBarDrawerToggle, you must call it during
-     * onPostCreate() and onConfigurationChanged()...
-     */
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
-        mDrawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggls
-        mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
     @Override

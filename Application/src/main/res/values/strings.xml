@@ -6,6 +6,7 @@
     <string-array name="menu_list">
         <item>Set Card Data</item>
         <item>Check ID</item>
+        <item>Shopping</item>
         <item>Balances</item>
         <item>Market Map</item>
     </string-array>

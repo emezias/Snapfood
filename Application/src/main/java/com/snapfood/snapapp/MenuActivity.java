@@ -3,8 +3,6 @@ package com.snapfood.snapapp;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -93,13 +91,6 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        final FragmentManager mgr = getSupportFragmentManager();
-        final FragmentTransaction tx = mgr.beginTransaction();
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.shop_action, menu);
@@ -115,13 +106,10 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
         return super.onPrepareOptionsMenu(menu);
     }
 
+
     /* The click listener for RecyclerView in the navigation drawer */
     @Override
     public void onClick(View view, int position) {
-        selectItem(position);
-    }
-
-    private void selectItem(int position) {
         // update the main content by replacing fragments, as needed
         mDrawerLayout.closeDrawer(mDrawerList);
         switch (position) {
@@ -130,7 +118,7 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
                 if (!TAG.equals(OnboardActivity.TAG))
                 startActivity(new Intent(this, OnboardActivity.class));
                 finish();
-                return;
+                break;
             case 1:
                 //check id
                 Toast.makeText(this, "Check ID", Toast.LENGTH_SHORT).show();
@@ -139,12 +127,22 @@ public class MenuActivity extends AppCompatActivity implements MenuAdapter.OnIte
                     startActivity(new Intent(this, CheckIDActivity.class));
                     finish();
                 }
-                return;
+                break;
             case 2:
-                //balances
+                //shopping
                 Toast.makeText(this, "To do", Toast.LENGTH_SHORT).show();
+                /**
+                 if (!TAG.equals(ShoppingActivity.TAG)) {
+                    startActivity(new Intent(this, ShoppingActivity.class));
+                    finish();
+                 }
+                 */
                 break;
             case 3:
+                Toast.makeText(this, "To do", Toast.LENGTH_SHORT).show();
+                //shopping, map TODO
+                break;
+            case 4:
                 Toast.makeText(this, "To do", Toast.LENGTH_SHORT).show();
                 //shopping, map TODO
                 break;

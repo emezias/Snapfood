@@ -1,9 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 
-# Built application files
-*.apk
-*.ap_
-
 # Files for the ART/Dalvik VM
 *.dex
 
@@ -43,3 +39,7 @@ captures/
 Application/tests/src/com/example/
 Application/tests/src/com/snapfood/snapapp/
 Application/src/main/java/com/snapfood/.DS_Store
+/.gitignore
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml

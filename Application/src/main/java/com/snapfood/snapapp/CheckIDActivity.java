@@ -3,7 +3,6 @@ package com.snapfood.snapapp;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import com.snapfood.snapapp.fragment.ResultFragment;
@@ -20,17 +19,19 @@ import io.confirm.confirmsdk.models.IdModel;
  * A simple launcher activity offering access to the individual samples in this project.
  */
 public class CheckIDActivity extends MenuActivity implements ConfirmCaptureListener, ConfirmSubmitListener {
+    public static final String TAG = "CheckIDActivity";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_id);
+        ConfirmCapture.getInstance().beginCapture(CheckIDActivity.this, CheckIDActivity.this);
+        /*setContentView(R.layout.activity_check_id);
         setMenu();
         findViewById(R.id.confirm_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ConfirmCapture.getInstance().beginCapture(CheckIDActivity.this, CheckIDActivity.this);
             }
-        });
+        });*/
     }
 
     @Override
